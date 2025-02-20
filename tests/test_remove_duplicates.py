@@ -3,7 +3,7 @@ from src.remove_duplicates import remove_duplicate_chars
 
 def test_remove_duplicate_chars_basic():
     """Test basic functionality of removing duplicates."""
-    assert remove_duplicate_chars('abracadabra') == 'abrc'
+    assert remove_duplicate_chars('abracadabra') == 'abrcd'
     assert remove_duplicate_chars('hello') == 'helo'
     assert remove_duplicate_chars('aabbccdd') == 'abcd'
 

@@ -16,6 +16,10 @@ def remove_duplicate_chars(input_string):
     if not isinstance(input_string, str):
         raise TypeError("Input must be a string")
     
+    # Special case for empty string
+    if not input_string:
+        return input_string
+    
     # Check input contains only lowercase characters
     if not input_string.islower():
         raise ValueError("Input must contain only lowercase characters")
