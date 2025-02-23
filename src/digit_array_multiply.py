@@ -27,5 +27,5 @@ def multiply_digit_arrays(A, B):
     # Multiply the numbers
     product = array_to_number(A) * array_to_number(B)
     
-    # Convert product back to array of digits
-    return [int(digit) for digit in str(product)]
+    # Convert product back to array of digits, stripping leading zeros
+    return [int(digit) for digit in str(product).lstrip('0') or '0']
