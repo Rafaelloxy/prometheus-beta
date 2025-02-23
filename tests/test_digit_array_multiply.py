@@ -7,7 +7,7 @@ def test_basic_multiplication():
 
 def test_multiplication_with_zeros():
     """Test multiplication involving zeros"""
-    assert multiply_digit_arrays([0, 5], [1, 0]) == [0, 5]
+    assert multiply_digit_arrays([0, 5], [1, 0]) == [5, 0]
 
 def test_large_numbers():
     """Test multiplication of larger multi-digit numbers"""
