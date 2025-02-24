@@ -31,9 +31,16 @@ def test_calculate_days_between_dates_invalid_format():
         calculate_days_between_dates('2023-1-1', '2023-01-02')
 
 def test_calculate_days_between_dates_invalid_date():
-    """Test that invalid dates raise a ValueError."""
-    with pytest.raises(ValueError, match="Invalid date format"):
-        calculate_days_between_dates('2023-02-30', '2023-01-01')
+    """Test that invalid dates raise a ValueError with correct message."""
+    error_cases = [
+        '2023-02-30',  # Invalid day for February
+        '2023-13-01',  # Invalid month
+        '2023-00-01',  # Invalid month
+        '2023-01-00',  # Invalid day
+        '2023-01-32'   # Invalid day for January
+    ]
     
-    with pytest.raises(ValueError, match="Invalid date format"):
-        calculate_days_between_dates('2023-13-01', '2023-01-01')
+    for invalid_date in error_cases:
+        with pytest.raises(ValueError, match="Invalid date format"), \
+             pytest.raises(ValueError, match="out of range"):
+            calculate_days_between_dates(invalid_date, '2023-01-01')
