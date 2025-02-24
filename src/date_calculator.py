@@ -23,7 +23,7 @@ def calculate_days_between_dates(date1: str, date2: str) -> int:
         raise ValueError("Invalid date format. Please use YYYY-MM-DD format.")
     
     try:
-        # Parse the dates
+        # Parse the dates, which will validate date correctness
         parsed_date1 = datetime.strptime(date1, '%Y-%m-%d')
         parsed_date2 = datetime.strptime(date2, '%Y-%m-%d')
         
@@ -33,5 +33,5 @@ def calculate_days_between_dates(date1: str, date2: str) -> int:
         return delta
     
     except ValueError as e:
-        # Raise a more specific error for invalid dates
-        raise ValueError(f"Invalid date. {str(e)}")
+        # Re-raise with a clear error message
+        raise ValueError(f"Invalid date format. {str(e)}")
