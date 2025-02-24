@@ -5,7 +5,7 @@ from src.function_logger import log_execution
 
 # Create a custom logger for testing
 test_logger = logging.getLogger('test_logger')
-test_logger.setLevel(logging.INFO)
+test_logger.setLevel(logging.DEBUG)
 
 class TestFunctionLogger:
     def test_basic_function_logging(self, caplog):
@@ -31,7 +31,10 @@ class TestFunctionLogger:
         result = test_func_with_args(3, 4)
         
         assert result == 7
-        assert "Args: (3, 4), Kwargs: {}" in caplog.text
+        
+        # Check for debug level logs containing arguments
+        debug_logs = [record for record in caplog.records if record.levelno == logging.DEBUG]
+        assert any("Args: (3, 4), Kwargs: {}" in record.message for record in debug_logs)
     
     def test_exception_logging(self, caplog):
         """Test logging of exceptions"""
