@@ -32,9 +32,10 @@ def max_non_adjacent_digit_sum(number: int) -> int:
     if n <= 1:
         return digits[0]
     
-    # Dynamic programming approach to find max non-adjacent sum
-    # dp[i] represents the max sum up to index i
+    # Initialize dynamic programming array
     dp = [0] * n
+    
+    # First two digits - take the max
     dp[0] = digits[0]
     dp[1] = max(digits[0], digits[1])
     
