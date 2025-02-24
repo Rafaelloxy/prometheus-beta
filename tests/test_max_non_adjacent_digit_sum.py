@@ -7,13 +7,13 @@ def test_single_digit():
 
 def test_two_digits():
     """Test two digit input"""
-    assert max_non_adjacent_digit_sum(42) == 6  # max of 4 or 2
-    assert max_non_adjacent_digit_sum(24) == 6  # max of 4 or 2
+    assert max_non_adjacent_digit_sum(42) == 4  # max of 4
+    assert max_non_adjacent_digit_sum(24) == 4  # max of 4
 
 def test_multiple_digits():
     """Test various multi-digit inputs"""
     assert max_non_adjacent_digit_sum(3241) == 7  # 3 + 4
-    assert max_non_adjacent_digit_sum(9876) == 15  # 9 + 6
+    assert max_non_adjacent_digit_sum(9876) == 16  # 9 + 7
     assert max_non_adjacent_digit_sum(1234) == 8  # 1 + 4 or 2 + 6
 
 def test_all_zeros():
