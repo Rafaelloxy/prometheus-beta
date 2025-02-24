@@ -14,7 +14,7 @@ def test_multiple_digits():
     """Test various multi-digit inputs"""
     assert max_non_adjacent_digit_sum(3241) == 7  # 3 + 4
     assert max_non_adjacent_digit_sum(9876) == 16  # 9 + 7
-    assert max_non_adjacent_digit_sum(1234) == 8  # 1 + 4 or 2 + 6
+    assert max_non_adjacent_digit_sum(1234) == 6  # actual max possible
 
 def test_all_zeros():
     """Test input with all zeros"""
